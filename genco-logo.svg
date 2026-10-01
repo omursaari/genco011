@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Genco</title>
+  <defs>
+    <radialGradient id="halo" cx="256" cy="262" r="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f7bff" stop-opacity=".45"/>
+      <stop offset=".55" stop-color="#6d4dff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#6d4dff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="110" y1="110" x2="420" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c4dff"/>
+      <stop offset=".5" stop-color="#2f5bff"/>
+      <stop offset="1" stop-color="#00b4ff"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="120" x2="0" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#e3ecff"/>
+      <stop offset="1" stop-color="#a9c6ff"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="40" y1="0" x2="472" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c4dff" stop-opacity="0"/>
+      <stop offset=".3" stop-color="#5b7cff"/>
+      <stop offset=".7" stop-color="#7fe4ff"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="380" y1="60" x2="460" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#5fd4ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+
+  <!-- yörünge: arka yarı (G'nin arkasında) -->
+  <g transform="rotate(-18 256 282)">
+    <path d="M44 282 A212 66 0 0 1 468 282" fill="none" stroke="url(#orbit)" stroke-width="9" stroke-linecap="round" opacity=".55"/>
+  </g>
+
+  <!-- G: derinlik gölgesi, kenar, yüz -->
+  <path d="M346 159 A140 140 0 1 0 396 266 H 272" fill="none" stroke="#141b5c" stroke-width="76" stroke-linejoin="miter" transform="translate(0 12)"/>
+  <path d="M346 159 A140 140 0 1 0 396 266 H 272" fill="none" stroke="url(#rim)" stroke-width="76" stroke-linejoin="miter"/>
+  <path d="M346 159 A140 140 0 1 0 396 266 H 272" fill="none" stroke="url(#face)" stroke-width="56" stroke-linejoin="miter"/>
+
+  <!-- yörünge: ön yarı (G'nin önünden geçer) -->
+  <g transform="rotate(-18 256 282)">
+    <path d="M44 282 A212 66 0 0 0 468 282" fill="none" stroke="url(#orbit)" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <!-- parıltı -->
+  <path filter="url(#glow)" fill="url(#spark)"
+        d="M438 44 Q446 94 492 102 Q446 110 438 160 Q430 110 384 102 Q430 94 438 44 Z"/>
+</svg>
